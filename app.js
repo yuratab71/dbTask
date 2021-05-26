@@ -109,7 +109,7 @@ app.put(`/`, (req, res) => {
 
         const {id, name, categorie, price, rating} = req.body;
         console.log(id, name, categorie, price, rating, req.body);
-        connection.query("UPDATE goods SET name = ?, categorie = ?, price = ?, rating = ? WHERE id = ?", [name, categorie, price, rating, id], (err, rows) => {
+        connection.query("UPDATE goods SET name = ?, categorie = ?, price = ?, rating = ?, description = ? WHERE id = ?", [name, categorie, price, rating, id], (err, rows) => {
             connection.release()
 
             if(!err) {
